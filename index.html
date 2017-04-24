@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="jquery-2.1.0.js"></script>
+        <script type="text/javascript" src="jquery.jumpwin.js"></script>
+    </head>
+    <style type="text/css">
+    *{
+        padding:0;
+        margin:0;
+    }
+    body,html{
+        width:100%;
+        height:100%;
+    }
+    .black{
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index: 1800000;
+    }
+    .alertbox{
+        width:400px;
+        min-height: 300px;
+        border-radius: 5px;
+        background:skyblue;
+        box-shadow: 4px 4px 10px #999, -4px -4px 10px #999;
+        z-index: 1000;
+        position:fixed;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        overflow:hidden;
+    }
+    .title{
+        width:100%;
+        height:60px;
+        background:#fff;
+        color:#666;
+        line-height:60px;
+        font-size:18px;
+        text-align: center;
+    }
+    .content{
+        padding:10px;
+    }
+    .btnbox{
+        height:60px;
+        text-align:center;
+        padding:10px;
+        background:#fff;
+    }
+    .btnbox a{
+        display: inline-block;
+        width:80px;
+        height:40px;
+        background:blue;
+        line-height: 40px;
+        margin-left:40px;
+        color:#fff;
+        text-decoration: none;
+        box-shadow: 2px 2px 4px #999, -2px -2px 4px #999;
+    }
+    .btnbox a:active{
+        box-shadow: 2px 2px 4px #999 inset, -2px -2px 4px #999 inset;
+    }
+    </style>
+    <body>
+    <div id="box" >弹出</div>
+    <div  class="box">弹出</div>
+    </body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $('.box').jumpwin({
+            alertbox:{     
+                width:300,
+                bgColor:'red'    
+            },
+            blg:{
+                bgFloge:false,
+                bgColor:"red",
+                opacity:0.1
+            }
+        })
+        $('#box').jumpwin({
+            alertbox:{     
+                width:300,
+                bgColor:'blue'    
+            },
+            blg:{
+                bgFloge:false,
+                bgColor:"red",
+                opacity:0.1
+            }
+        })
+    })
+</script>
